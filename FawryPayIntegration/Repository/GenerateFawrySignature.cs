@@ -1,4 +1,5 @@
-﻿using FawryPayIntegration.Dto;
+﻿using FawryPayIntegration.Contract;
+using FawryPayIntegration.Dto;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;

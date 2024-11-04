@@ -1,6 +1,6 @@
 ﻿using FawryPayIntegration.Dto;
 
-namespace FawryPayIntegration.Services
+namespace FawryPayIntegration.Contract
 {
     public interface IGenerateFawrySignature
     {

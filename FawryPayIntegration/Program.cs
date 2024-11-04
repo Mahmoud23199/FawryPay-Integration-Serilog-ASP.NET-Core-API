@@ -1,3 +1,4 @@
+using FawryPayIntegration.Contract;
 using FawryPayIntegration.Dto;
 using FawryPayIntegration.Services;
 var builder = WebApplication.CreateBuilder(args);
