@@ -32,7 +32,9 @@ json
 نسخ الكود
 {
     "order_reference": "ORDER123",
+
     "lang": "EN",
+
     "customer_phone": "01012345678",
     "customer_email": "customer@example.com",
     "customer_name": "John Doe",
