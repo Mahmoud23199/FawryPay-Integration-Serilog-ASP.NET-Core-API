@@ -49,7 +49,8 @@ Include fawrypay-payments.js in your HTML to access FawryPay’s checkout functi
 Initiate the payment with:
 
 javascript Code:
- 
+ {
+
 
 fetch('https://localhost:7014/FawryPayController/PostFawry', 
 {
@@ -64,6 +65,7 @@ fetch('https://localhost:7014/FawryPayController/PostFawry',
 })
 .catch(error => console.error('Error:', error));
 
+}
 
 Additional Notes:
 
