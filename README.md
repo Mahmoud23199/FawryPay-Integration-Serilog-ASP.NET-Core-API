@@ -50,15 +50,61 @@ Initiate the payment with:
 
 javascript Code:
 
-fetch('https://localhost:7014/FawryPayController/PostFawry', 
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FawryPay Test</title>
+    <!-- Include the FawryPay SDK -->
+    <script src="https://atfawry.fawrystaging.com/atfawry/plugin/assets/payments/js/fawrypay-payments.js"></script>
+</head>
 
-{
+<body>
+    <button id="payButton">Pay with FawryPay</button>
+    <div id="fawryContainer"></div>
 
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(orderData)}).then(response => response.json()).then(data => {const configuration = { locale: 'en', mode: 'POPUP' };FawryPay.checkout(data, configuration);}).catch(error => console.error('Error:', error));
+    <script>
+        // Define the order data required by your backend
+        const orderData = {
+            order_reference: "ORDER123",
+            lang: "EN",
+            customer_phone: "01012345678",
+            customer_email: "customer@example.com",
+            customer_name: "John Doe",
+            package_id: 1, // Ensure this is an integer
+            package_price: 100.00,
+            decoder_id: 2, // Ensure this is an integer
+            hardware_price: 50.00
+        };
 
+        document.getElementById('payButton').addEventListener('click', function () {
+            fetch('https://localhost:7014/WeatherForecast/PostFawry', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(orderData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const configuration = {
+                        locale: 'en',
+                        mode: 'POPUP' // or 'EMBEDDED' depending on your preference
+                    };
+
+                    // Trigger the FawryPay checkout with the data from the server
+                    if (typeof FawryPay !== 'undefined') {
+                        FawryPay.checkout(data, configuration);
+                    } else {
+                        console.error('FawryPay library failed to load.');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+
+</html>
 Additional Notes:
 
 Testing: This setup uses a test environment URL for FawryPay (fawrystaging). For production, update the URLs to the live environment.
