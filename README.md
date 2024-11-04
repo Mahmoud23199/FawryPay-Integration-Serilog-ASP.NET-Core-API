@@ -31,10 +31,9 @@ Body Example:
 json
  
 {
+
     "order_reference": "ORDER123",
-
     "lang": "EN",
-
     "customer_phone": "01012345678",
     "customer_email": "customer@example.com",
     "customer_name": "John Doe",
@@ -49,11 +48,12 @@ Frontend Usage:
 Include fawrypay-payments.js in your HTML to access FawryPay’s checkout function.
 Initiate the payment with:
 
-javascript
+javascript Code:
  
-fetch('https://localhost:7014/FawryPayController/PostFawry', 
 
+fetch('https://localhost:7014/FawryPayController/PostFawry', 
 {
+
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(orderData)
@@ -64,6 +64,7 @@ fetch('https://localhost:7014/FawryPayController/PostFawry',
     FawryPay.checkout(data, configuration);
 })
 .catch(error => console.error('Error:', error));
+
 
 Additional Notes:
 
