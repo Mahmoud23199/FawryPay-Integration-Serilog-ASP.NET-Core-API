@@ -50,9 +50,7 @@ Initiate the payment with:
 
 javascript Code:
 
-
  {
-
 
 fetch('https://localhost:7014/FawryPayController/PostFawry', 
 {
