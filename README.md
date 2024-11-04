@@ -25,7 +25,7 @@ Testing: Use Postman or the included frontend HTML to test the integration.
 Usage:
 Backend API Endpoint:
 
-Endpoint: /WeatherForecast/PostFawry
+Endpoint: /FawryPayController/PostFawry
 Method: POST
 Body Example:
 json
@@ -51,7 +51,7 @@ Initiate the payment with:
 
 javascript
  
-fetch('https://localhost:7014/WeatherForecast/PostFawry', 
+fetch('https://localhost:7014/FawryPayController/PostFawry', 
 
 {
     method: 'POST',
