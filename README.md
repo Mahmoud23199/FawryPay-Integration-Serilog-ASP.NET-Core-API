@@ -51,6 +51,7 @@ Initiate the payment with:
 javascript
 نسخ الكود
 fetch('https://localhost:7014/WeatherForecast/PostFawry', {
+
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(orderData)
@@ -61,6 +62,7 @@ fetch('https://localhost:7014/WeatherForecast/PostFawry', {
     FawryPay.checkout(data, configuration);
 })
 .catch(error => console.error('Error:', error));
+
 Additional Notes:
 Testing: This setup uses a test environment URL for FawryPay (fawrystaging). For production, update the URLs to the live environment.
 Security: Avoid hardcoding sensitive information like SecretKey directly in code for production.
