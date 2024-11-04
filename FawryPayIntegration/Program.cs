@@ -1,4 +1,5 @@
 using FawryPayIntegration.Dto;
+using FawryPayIntegration.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,6 +10,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.Configure<Plan>(builder.Configuration.GetSection("Plan"));
+
+builder.Services.AddScoped<IGenerateFawrySignature, GenerateFawrySignature>();
+
 
 builder.Services.AddCors(options =>
 {

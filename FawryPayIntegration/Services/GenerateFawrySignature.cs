@@ -5,9 +5,9 @@ using System.Text;
 
 namespace FawryPayIntegration.Services
 {
-    public class GenerateFawrySignature
+    public class GenerateFawrySignature:IGenerateFawrySignature
     {
-        public static string GenerateFawrySign(OnlineOrder order, Plan plan, string pathLang)
+        public string GenerateFawrySign(OnlineOrder order, Plan plan, string pathLang)
         {
             string data = plan.Merchant + order.order_reference;
             string returnUrl = $"http://localhost:32453/{pathLang}/eshop.aspx?RN={order.order_reference}&action=r";

@@ -10,10 +10,11 @@ namespace FawryPayIntegration.Controllers
     public class FawryPayController : ControllerBase
     {
         private readonly Plan _fawrySettings;
-
-        public FawryPayController(IOptions<Plan> fawrySettings)
+        private readonly IGenerateFawrySignature _generateFawrySignature;
+        public FawryPayController(IOptions<Plan> fawrySettings,IGenerateFawrySignature generateFawrySignature)
         {
             _fawrySettings = fawrySettings.Value;
+            _generateFawrySignature= generateFawrySignature;
         }
         [HttpPost("PostFawry")]
         public IActionResult PostFawry([FromBody] OnlineOrder order)
@@ -28,7 +29,7 @@ namespace FawryPayIntegration.Controllers
             };
 
             // Generate the FawryPay signature
-            string signature = GenerateFawrySignature.GenerateFawrySign(order, plan, pathLang);
+            string signature = _generateFawrySignature.GenerateFawrySign(order, plan, pathLang);
             string returnUrl = $"http://localhost:32453/{pathLang}/eshop.aspx?RN={order.order_reference}&action=r";
 
             // Build the FawryPay charge request payload
