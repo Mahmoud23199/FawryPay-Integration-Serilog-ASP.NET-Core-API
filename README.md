@@ -10,7 +10,7 @@ Installation:
 Clone the repository:
 
 bash
-نسخ الكود
+ 
 git clone https://github.com/your-username/FawryPayIntegration.git
 Configure Settings: Update appsettings.json with your FawryPay MerchantCode and SecretKey.
 
@@ -18,7 +18,7 @@ Run the Application:
 
 In Visual Studio or via CLI:
 bash
-نسخ الكود
+ 
 dotnet run
 Testing: Use Postman or the included frontend HTML to test the integration.
 
@@ -29,7 +29,7 @@ Endpoint: /WeatherForecast/PostFawry
 Method: POST
 Body Example:
 json
-نسخ الكود
+ 
 {
     "order_reference": "ORDER123",
 
@@ -48,10 +48,10 @@ Frontend Usage:
 
 Include fawrypay-payments.js in your HTML to access FawryPay’s checkout function.
 Initiate the payment with:
-javascript
-نسخ الكود
-fetch('https://localhost:7014/WeatherForecast/PostFawry', {
 
+javascript
+ 
+fetch('https://localhost:7014/WeatherForecast/PostFawry', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(orderData)
@@ -64,6 +64,7 @@ fetch('https://localhost:7014/WeatherForecast/PostFawry', {
 .catch(error => console.error('Error:', error));
 
 Additional Notes:
+
 Testing: This setup uses a test environment URL for FawryPay (fawrystaging). For production, update the URLs to the live environment.
 Security: Avoid hardcoding sensitive information like SecretKey directly in code for production.
 Error Handling: Add error handling for edge cases such as network errors or missing order data
