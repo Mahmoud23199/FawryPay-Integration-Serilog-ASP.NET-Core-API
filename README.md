@@ -51,7 +51,8 @@ Initiate the payment with:
 
 javascript
  
-fetch('https://localhost:7014/WeatherForecast/PostFawry', {
+fetch('https://localhost:7014/WeatherForecast/PostFawry', 
+{
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(orderData)
