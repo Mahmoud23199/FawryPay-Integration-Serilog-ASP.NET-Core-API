@@ -50,9 +50,8 @@ Initiate the payment with:
 
 javascript Code:
 
- {
-
 fetch('https://localhost:7014/FawryPayController/PostFawry', 
+
 {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -64,8 +63,6 @@ fetch('https://localhost:7014/FawryPayController/PostFawry',
     FawryPay.checkout(data, configuration);
 })
 .catch(error => console.error('Error:', error));
-
-}
 
 Additional Notes:
 
