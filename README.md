@@ -52,7 +52,9 @@ javascript Code:
 
 fetch('https://localhost:7014/FawryPayController/PostFawry', 
 
+
 {
+
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(orderData)
