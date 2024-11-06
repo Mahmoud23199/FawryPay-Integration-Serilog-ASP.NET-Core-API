@@ -1,11 +1,12 @@
 Overview:
+
 This project serves as a sample integration for handling online payments through FawryPay, a popular payment gateway. The API is designed to create a secure payment request for products or services using FawryPay’s SDK.
 
 Features:
 ASP.NET Core API with a PostFawry endpoint for initiating FawryPay payment requests.
 Signature Generation: Ensures data integrity by generating a SHA-256 hash signature for secure payment requests.
-Frontend Integration: Example HTML page with JavaScript to initiate the payment request and handle the FawryPay response.
-Dynamic Language Support: Supports both Arabic and English based on user-selected language in the request.
+Frontend Integration: An example HTML page with JavaScript is used to initiate the payment request and handle the FawryPay response.
+Dynamic Language Support: Supports Arabic and English based on user-selected language in the request.
 Installation:
 Clone the repository:
 
