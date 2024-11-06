@@ -1,6 +1,6 @@
 Overview:
 
-This project serves as a sample integration for handling online payments through FawryPay, a popular payment gateway. The API is designed to create a secure payment request for products or services using FawryPay’s SDK.
+This project is a sample integration for handling online payments through FawryPay, a popular payment gateway. The API is designed to create a secure payment request for products or services using FawryPay’s SDK.
 
 Features:
 ASP.NET Core API with a PostFawry endpoint for initiating FawryPay payment requests.
@@ -29,7 +29,7 @@ Backend API Endpoint:
 Endpoint: /FawryPayController/PostFawry
 Method: POST
 Body Example:
-json
+JSON
  
 {
 
