@@ -1,6 +1,7 @@
 using FawryPayIntegration.Contract;
 using FawryPayIntegration.Dto;
 using FawryPayIntegration.Services;
+using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,6 +22,18 @@ builder.Services.AddCors(options =>
         builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 });
 
+//Serilog
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Error()
+    .WriteTo.Console()
+.WriteTo.File(
+        path: $"Logs/log-{DateTime.Now:yyyy-MM-dd-}.txt",
+        rollingInterval: RollingInterval.Day,
+              outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] {Message:lj}{NewLine}{Exception}"
+    )
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 var app = builder.Build();
 
